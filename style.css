@@ -1,0 +1,492 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     font-family: sans-serif;
+
+}
+
+/* list styling */
+ul{
+     list-style: none;
+     display: flex;
+}
+
+/* text styling */
+a{
+     text-decoration: none;
+     color: inherit;
+     font-size: 1.3rem;
+     transition: color .2s ease-in;
+     font-weight: 200;
+}
+
+a:hover{
+     color: #395ECA;
+}
+
+h1{
+     letter-spacing: 5px;
+     font-size: 6rem;
+     font-weight: bold;
+     margin-bottom: 40px;
+     background-image: linear-gradient(to right, #ff6600, #ff33cc); /* Define your gradient colors here */
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+}
+
+h2{
+     font-size: 3rem;
+     font-weight: 200;
+     margin-bottom: 30px;
+     letter-spacing: 5px;
+}
+
+h3{
+     font-size: 2rem;
+     margin-bottom: 30px;
+     font-weight: 400;
+}
+
+h6{
+     color: #647388;
+     font-weight: bold;
+     margin: 10px 0;
+}
+
+p{
+     font-size: 1.3rem;
+     margin-bottom: 40px;
+     line-height: 1.8rem;
+     font-weight: 200;
+}
+
+span{
+     font-weight: lighter;
+     font-size: 1.2rem;
+}
+
+label{
+     font-weight: 200;
+     color: #395ECA;
+}
+
+input{
+     border: none;
+     outline: none;
+     padding: 5px 10px;
+     border-bottom: 1px solid #ccc;
+     padding-bottom: 10px;
+}
+
+/* buttons */
+
+.btn{
+     padding: 8px 18px;
+     background: white;
+     color: black;
+     border-radius: 7px;
+}
+
+.btn--light{
+     border: 1px solid black;
+     border-radius: 0;
+     background: transparent;
+     padding: 10px 50px;
+     color: black;
+     font-weight: bold;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* NAVBAR */
+
+nav{
+     position: fixed;
+     width: 100%;
+     padding: 0 50px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: white;
+     color: black;
+}
+
+.logo{
+     width: 260px;
+     position: relative;
+     left: -70px;
+}
+
+
+.nav__left{
+     display: flex;
+     gap: 60px;
+}
+
+/* navbar media */
+
+@media screen and (max-width: 1000px) {
+     nav{
+          padding: 42px 50px;
+          justify-content: flex-start;
+          gap: 30px;
+     }
+
+     
+     nav .logo{
+          display: none;
+     }
+
+}
+
+
+/* hero */
+
+.hero{
+     height: 900px;
+     background: url('./assets/risen-wang-20jX9b35r_M-unsplash.png') no-repeat;
+     background-size: cover;
+     color: #96b5e2;
+     display: flex;
+     flex-flow: column;
+     text-align: center;
+     justify-content: center;
+     padding: 0 120px;
+     
+}
+
+.hero__video{
+     margin: 0 auto;
+     width: fit-content;
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+     background: black;
+     padding: 10px 20px;
+     border-radius: 20px;
+     color: #96b5e2;
+     box-shadow: 0 0 10px #96b5e2;
+}
+
+.hero__video > i{
+     position: relative;
+     top: 2px;
+}
+
+/* hero media */
+
+@media screen and (max-width: 1000px) {
+     .hero{
+          padding: 0 10px;
+     }
+}
+
+@media screen and (max-width: 765px) {
+
+     .hero{
+          gap: 30px;
+     }
+
+     .hero h1{
+          font-size: 5rem;
+         
+     }
+
+     .hero__video span, .hero__video{
+          font-size: 1.8rem;
+     }
+}
+
+/* why */
+
+.why, .volunteer{
+     height: 400px;
+     display: flex;
+     flex-flow: column;
+     text-align: center;
+     justify-content: center;
+     padding: 0 20%;
+     scroll-behavior: smooth;
+}
+
+.why p{
+     color: #222A35;
+}
+
+/* HIRE */
+
+.hire{
+     height: 800px;
+     padding: 0 50px;
+     display: flex;
+     align-items: center;
+     text-align: center;
+     justify-content: center;
+     gap: 100px;
+     background: url('./assets/brett-jordan-NAENofLAWjE-unsplash.png') no-repeat;
+     background-size: cover;
+     flex-wrap: wrap;
+}
+
+.hire__container{
+     background: rgba(255, 255, 255, 0.9);
+     flex: 1;
+     padding: 80px 30px 50px 30px;
+     border-radius: 20px;
+     box-shadow: 0 0 20px#ababab;
+     transition: box-shadow .2s ease-in, background-color .2s ease-in;
+     cursor: pointer;
+     display: flex;
+     flex-flow: column;
+     justify-content: center;
+     height: 450px;
+}
+
+.hire__container:hover{
+     box-shadow: 0 0 20px#96b5e2;
+     background: white;
+
+
+}
+
+.hire .btn{
+     width: 100%;
+}
+
+/* hire media */
+
+@media screen and (max-width: 1000px) {
+     .hire{
+          flex-flow: column;
+          padding: 200px 200px;
+          height: 1000px;
+     }
+
+     .hire__container{
+          padding: 50px 20px;     
+     
+     }
+}
+
+@media screen and (max-width: 765px){
+     .hire{
+          padding: 200px 50px;
+     }
+}
+
+
+
+/* VOLUNTEER */
+
+.volunteer{
+     height: 500px;
+}
+
+/* volunteer media */
+
+
+@media screen and (max-width: 765px){
+     .volunteer{
+          padding: 0 50px;
+     }
+}
+    
+
+
+/* CONTACT PAGE */
+
+.contact{
+     height: 800px;
+}
+
+.contact h1{
+     margin: 0 auto;
+     text-align: center;
+     font-size: 8rem;
+
+}
+
+.contact__left{
+     width: 100%;
+     height: 500px;
+     text-align: center;
+     background: url('./assets/jonathan-borba-R0y_bEUjiOM-unsplash.png') no-repeat;
+     background-size: cover;
+     flex: 1;
+     display: flex;
+     align-items: center;
+}
+
+
+.contact__right{
+     flex: 1;
+     border-radius: 20px;
+     padding: 100px 50px;
+}
+
+.contact .input-fields{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 80px;
+     justify-content: space-between;
+     margin-bottom: 80px;
+}
+
+.input{
+     flex-basis: 40%;
+}
+
+input{
+     width: 100%;
+     margin-top: 20px;
+}
+
+textarea{
+     border: 1px solid #ccc;
+     outline: none;
+     padding: 10px;
+     font-family: inherit;
+     font-weight: 200;
+     margin-top: 10px;
+     width: 100%;
+}
+
+.submit{
+     background: black;
+     padding: 10px 20px;
+     border-radius: 50px;
+     color: #96b5e2;
+     outline: none;
+     font-size: 1.3rem;
+     border: 1px solid black;
+     box-shadow: 0 0 10px #96b5e2;
+     cursor: pointer;
+     margin: 0 auto;
+     text-align: center;
+     margin-top: 30px;
+}
+
+/* contact media */
+
+@media screen and (max-width: 765px){
+     .contact{
+          height: 1000px;
+     }
+
+     .contact h1{
+          font-size: 5rem;
+     }
+
+     .input{
+          flex-basis: 100%;
+     }
+
+}
+
+/* FORM REDIRECT ( THANK YOU ) */
+
+.thanks{
+    width: 100%;
+    height: 100vh;
+    background-image: url('./assets/risen-wang-20jX9b35r_M-unsplash.png'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+
+}
+
+.thanks h1{
+     font-size: 10rem;
+}
+
+/* redirect media */
+
+@media screen and (max-width: 765px) {
+     .thanks h1{
+          font-size: 5rem;
+     }
+}
+
+
+/* footer */
+
+footer{
+     background: #000000;;
+     height: 300px;
+     padding: 30px 70px;
+     font-size: 0.8rem;
+
+}
+
+footer a{
+     font-size: 1rem;
+}
+
+.footer__top{
+     display: flex;
+     justify-content: space-between;
+     border-bottom: 1px solid white;
+     padding-bottom: 30px;
+}
+
+.footer__socials li{
+     margin-right: 20px;
+     margin-bottom: 10px;
+     cursor: pointer;
+}
+
+.footer__links li {
+     color: white;
+     margin-right: 20px;
+}
+
+.footer__right{
+     color: rgb(190, 190, 190);
+     line-height: 1.3rem;
+}
+
+.footer__right span, .footer__bottom span{
+     color: white;
+     font-weight: bold;
+     font-size: 1rem;
+}
+
+.footer__bottom{
+     margin-top: 30px;
+     display: flex;
+     justify-content: space-between;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
